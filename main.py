@@ -5,9 +5,9 @@ import tkinter as tk
 root = ctk.CTk()
 root.title("Expense Tracker")
 root.geometry("1920x1080")
-root._set_appearance_mode("dark")
+ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
-root.pack_propagate("False")
+root.pack_propagate(False)
 
 def home_page():
     #creating a frame for home page
@@ -17,7 +17,24 @@ def home_page():
     #Creating Labels for different section
     #Current in hand
     cih_label = ctk.CTkLabel(
-        home_frame,width=390,height=142,bg_color="#ABABAB",text = "Currently In Hand:\n {}",font= ('Khula Light',44),corner_radius=5)
-    cih_label.place(x = 20, y = 23)
+        home_frame,width=300,height=142,fg_color="#ABABAB",text = "In Hand:\n {}",font= ('Khula Light',36),corner_radius=50)
+    cih_label.pack_propagate(False)
+    cih_label.place(x = 42, y = 55)
+    
+    #Profit
+    profit_label = ctk.CTkLabel(
+        home_frame,width=300,height=142,fg_color="#ABABAB",text = "Profit:\n {}",font= ('Khula Light',36),corner_radius=50)
+    profit_label.place(x = 426, y = 55)
+    
+    #Inflow
+    Inflow_label = ctk.CTkLabel(
+        home_frame,width=300,height=142,fg_color="#00A241",text = "Inflow:\n {}",font= ('Khula Light',36),corner_radius=50)
+    Inflow_label.place(x = 810, y = 55)
+    
+    #Outflow
+    outflow_label = ctk.CTkLabel(
+        home_frame,width=300,height=142,fg_color="#B00000",text = "Outflow:\n {}",font= ('Khula Light',36),corner_radius=50)
+    outflow_label.place(x = 1194, y = 55)    
+    
 home_page()
 root.mainloop()
